@@ -1,18 +1,18 @@
-
-
 class RingBuffer:
-    def __init__(self, capacity):
+    def __init__(self, capacity, ):
         self.capacity = capacity
-        self.data = []
+        self._data = []
+        self.index = 0
 
-    def append(self, item):
-        if len(self.data) < self.capacity:
-            self.data.append(item)
+    def append(self, value):
+        if len(self._data) == self.capacity:
+            self._data[self.index] = value
         else:
-            self.data[0] = item
+            self._data.append(value)
+        self.index = (self.index+1) % self.capacity
 
     def get(self):
-        return self.data
+        return self._data
 
 
 # If I'm not at the constraint add to the list
