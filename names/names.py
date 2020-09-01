@@ -13,14 +13,33 @@ f.close()
 duplicates = []  # Return the list of duplicates in this data structure
 
 # Replace the nested for loops below with your improvements
-for name_1 in names_1:
-    for name_2 in names_2:
-        if name_1 == name_2:
-            duplicates.append(name_1)
+# for name_1 in names_1:
+#     for name_2 in names_2:
+#         if name_1 == name_2:
+#             duplicates.append(name_1)
+
+
+# Looping through the files
+name1 = map(names_1, 1)
+name2 = map(names_2, 1)
+
+# If name1 == name2 go left and print the value.
+# If not send it to the right
+
+
+class NameBST:
+    def __init__(self, value,):
+        self.value = value
+        self.left = None
+        self.right = None
+
+    def search(name1, name2):
+        if name1 == name2:
+
 
 end_time = time.time()
-print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
-print (f"runtime: {end_time - start_time} seconds")
+print(f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
+print(f"runtime: {end_time - start_time} seconds")
 
 # ---------- Stretch Goal -----------
 # Python has built-in tools that allow for a very efficient approach to this problem
