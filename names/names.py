@@ -20,13 +20,14 @@ duplicates = []  # Return the list of duplicates in this data structure
 #         if name_1 == name_2:
 #             duplicates.append(name_1)
 
+tree = BSTree("names")
 
-for name_1 in names_1:
-    BSTree.insert(name_1)
+for name1 in names_1:
+    tree.insert(name1)
 
-
-a = [name for name in names_2 if BSTree.contains(name)]
-duplicates.append(a)
+for name2 in names_2:
+    if tree.contains(name2):
+        duplicates.append(name2)
 
 
 end_time = time.time()
